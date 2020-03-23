@@ -1,6 +1,20 @@
+Aggressions
+
 {% if latest_aggression_list %}
     <ul>
     {% for aggression in latest_aggression_list %}
+        <li><a href="/aggressions/{{ aggression.id }}/">[link]</a> [{{aggression.time}}] [{{aggression.place}}] {{ aggression.aggression_text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No aggressions are available.</p>
+{% endif %}
+
+Misoginia
+
+{% if misoginia_aggression_list %}
+    <ul>
+    {% for aggression in misoginia_aggression_list %}
         <li><a href="/aggressions/{{ aggression.id }}/">[link]</a> [{{aggression.time}}] [{{aggression.place}}] {{ aggression.aggression_text }}</li>
     {% endfor %}
     </ul>
