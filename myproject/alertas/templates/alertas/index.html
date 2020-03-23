@@ -14,7 +14,7 @@ Tags
 
 {% load taggit_templatetags2_tags %}
 
-{% get_taglist as tags %}
+{% get_taglist as tags for 'alertas.aggression' %}
 
 <ul>
     {% for tag in tags %}
