@@ -1,0 +1,14 @@
+<h1>Aggression. id: {{ aggression.id }}</h1>
+
+<ul>
+    <li>time: [{{aggression.time}}]</li>
+    <li>place: [{{aggression.place}}]</li>
+</ul>
+
+Tags:
+
+<ul>
+{% for tag in aggression.tags.all %}
+    <li>{{ tag }}</li>
+{% endfor %}
+</ul>

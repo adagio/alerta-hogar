@@ -10,6 +10,7 @@ from rest_framework.response import Response
 
 from .serializers import AggressionSerializer
 
+
 def index(request):
     latest_aggression_list = Aggression.objects.all()
     misoginia_aggression_list = Aggression.objects.filter(tags__name__in=["misoginia"])
@@ -20,6 +21,11 @@ def index(request):
         'homofobia_aggression_list': homofobia_aggression_list
     }
     return render(request, 'alertas/index.html', context)
+
+
+def detail(request, id):
+    aggression = Aggression.objects.get(pk=id)
+    return render(request, 'alertas/detail.html', {'aggression': aggression})
 
 
 def stats(request):
