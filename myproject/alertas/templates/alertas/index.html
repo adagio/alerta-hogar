@@ -10,6 +10,18 @@ Aggressions
     <p>No aggressions are available.</p>
 {% endif %}
 
+Tags
+
+{% load taggit_templatetags2_tags %}
+
+{% get_taglist as tags %}
+
+<ul>
+    {% for tag in tags %}
+    <li>{{tag}} ({{tag.num_times}})</li>
+    {% endfor %}
+</ul>
+
 Misoginia
 
 {% if misoginia_aggression_list %}
