@@ -13,9 +13,11 @@ from .serializers import AggressionSerializer
 def index(request):
     latest_aggression_list = Aggression.objects.all()
     misoginia_aggression_list = Aggression.objects.filter(tags__name__in=["misoginia"])
+    homofobia_aggression_list = Aggression.objects.filter(tags__name__in=["homofobia"])
     context = {
         'latest_aggression_list': latest_aggression_list,
-        'misoginia_aggression_list': misoginia_aggression_list
+        'misoginia_aggression_list': misoginia_aggression_list,
+        'homofobia_aggression_list': homofobia_aggression_list
     }
     return render(request, 'alertas/index.html', context)
 
