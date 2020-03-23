@@ -21,12 +21,30 @@ def index(request):
     }
     return render(request, 'alertas/index.html', context)
 
+
+def stats(request):
+    latest_aggression_list = Aggression.objects.all()
+    context = {
+        'latest_aggression_list': latest_aggression_list
+    }
+    return render(request, 'alertas/stats.html', context)
+
+
 class ListAggressionsView(generics.ListAPIView):
     """
     Provides a get method handler.
     """
     queryset = Aggression.objects.all()
     serializer_class = AggressionSerializer
+
+
+class AggressionsStatsView(generics.ListAPIView):
+    """
+    Provides a get method handler.
+    """
+    queryset = Aggression.objects.all()
+    serializer_class = AggressionSerializer
+
 
 @api_view(['GET'])
 def aggression_collection(request):
