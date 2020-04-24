@@ -17,7 +17,7 @@ with venv activated:
 
 ```
 pip install -r requirements.txt
-cd alertas
+cd myproject
 python manage.py createsuperuser
 python manage.py migrate
 python manage.py runserver
