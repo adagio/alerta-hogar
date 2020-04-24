@@ -1,4 +1,4 @@
 Django>=3.0.3
 django-taggit
-django-taggit-templatetags
+django-taggit-templatetags2
 djangorestframework
